@@ -122,8 +122,36 @@ The access modifier in Java are as follows:
     \item protected - allows classes in this package to access your class
 \end{itemize}
 
+We can also omit the access modifier if we want.
+
+The Fields also get access modifier just like C++. The same access modfier keywords as class.
+The default access modifier for fields if ommited is private. If an access modifier for fields is more restrictive than its encapsulating class,
+the field's access modifier gets precedence.
+\begin{lstlisting}
+
+    public class Car {
+        // Accessable only by the class
+        private String model;
+        private String color;
+
+        // Accessable by anyone!
+        public String owner;
+
+        // Set owner, accessable by anyone.
+        public void setOwner(String owner){
+            this.owner = owner;
+        }
+
+    }
+
+\end{lstlisting}
 
 
 
+Java adds some basic functionality to each Class we create. An object of any class in Java is child of Object class which implments these functionalities.
+
+Also, it is important that in Java declaring of a variable should be its initalization. RAII (Resource allocation is initalization).
+This means, if we write the code: Car porsche; This would create null referene. We have to assign an address to it explicitly. So, we fix the code to:  Car porsche = new Car();
+this assigns the reference the address in the heap. Actually, the compiler will not let us to compile a code with uninitialized refrence.
 
 \end{document}
