@@ -1,6 +1,5 @@
 \documentclass[]{report}
-
-
+\usepackage{hyphenat}
 \title{Notes on ROS}
 \author{Amir Nourinia}
 
@@ -36,12 +35,37 @@ The notes here are from the lecture Visual Navigation for Flying Robots by Dr. J
         \subsection*{Publisher/Subscriber}
         One consumer C requests a subscription for the data by the producer P (e.g. a camera or GPS). The producer P sends the subscribed data as it is generated to C.
         Data generated accordignto a trigger (e.g., sensor data, computations, other messages, ...). This method helps in the thrift/frugality of data usage and computation power.
-
+        We will recieve the data until we unsubscribe.
         C - subscription request - P \\
         P - data (t=0) - C \\
         P - data (t=1) - C \\
         \dots
-        
+
+        \subsection*{Publish to Blackboard (Shared memory)}
+        The producer P sends data to the blackboard (e.g., parameter server)
+        Consumer C pulls data from the Blackboard B; Only the last instance of data is stored int he Blackboard B.
+        This is mostly used for storing parameters (State) at one centeral place.
+
+        P - data - B - data request - C and C - data - B
+
+        \subsection*{Service Calls}
+        The client C sends a request to the server S. The server returns the result. The client waits for the result (synchronous communication)
+        Also called: Remoter Procedure Call. This is a synchronous call but it can also get implmented as a asynchronous call.
+
+        C - request + input data - S(server)
+        S - result - C
+
+        \section{Actions (Preemptive Tasks)}
+
+
+        \section{ Concepts in ROS}
+        \begin{itemize}
+            \item Nodes: programs that communicate with eachother.
+            \item Messages: data structres (e.g., "Image")
+            \item Topics: typed message channels to which \\ nodes can publish/subscribe.  (e.g., /camera/image\_color)
+            \item ds
+        \end{itemize}
+
     \end{itemize}
 
 
