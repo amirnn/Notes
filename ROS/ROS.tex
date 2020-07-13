@@ -55,17 +55,23 @@ The notes here are from the lecture Visual Navigation for Flying Robots by Dr. J
         C - request + input data - S(server)
         S - result - C
 
-        \section{Actions (Preemptive Tasks)}
+        \section*{Actions (Preemptive Tasks)}
 
 
-        \section{ Concepts in ROS}
+        \section*{ Concepts in ROS}
         \begin{itemize}
             \item Nodes: programs that communicate with eachother.
             \item Messages: data structres (e.g., "Image")
             \item Topics: typed message channels to which \\ nodes can publish/subscribe.  (e.g., /camera/image\_color)
-            \item ds
+            \item Parameters: Stored in a blackboard.
         \end{itemize}
 
+        \section*{Software Management}
+        \begin{itemize}
+            \item Pacakge: atomic unit of building, contains one or more nodes and/or message definitions.
+            \item Stack: atomic unit of releasing, contains several packages with a common theme.
+            \item Repository: contains several stacks, typically one repository per institution.
+        \end{itemize}
     \end{itemize}
 
 
