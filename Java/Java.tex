@@ -1,12 +1,47 @@
 \documentclass[11pt,twoside,a4paper]{report}
 
+\usepackage{listings}
+\usepackage{amssymb} %For Math symbols
+\usepackage{textcomp}
 
 \title{Java Notes}
 \author{Amir Nourinia}
 
 \begin{document}
     \maketitle
-    \section{Difference Between Java and C++}
-        First of all Java is completely OOP. Meaning even the main function gets wrapped inside a Class.
+    \section{Keywords}
+    The most important thing is that class and main keywords are both lowercase! :D
 
+    Moving on, all the keywords are lowercase. For a list you can search online. The wikipeida and w3schools or oracale have a list you can use as a reference.
+    \section{Difference and Similarties Between Java and C++}
+        First of all Java is completely OOP. Meaning even the main function gets wrapped inside a Class.
+        We mark the access modifer of the wrapper function for the main with public (lowercase). And also, we mark
+        the main function with:
+        
+        \begin{lstlisting}
+        static public void main(String[] args){
+            // DoSomething
+         }
+        \end{lstlisting}
+
+        Note that we use barackets for Array declartaion, however, we use them after the type. In previous example the array declaration is done 
+        with \verb|String[]|.
+
+        Java also uses semicolon \verb|;| to declare the end of an statement.
+
+    \section{Primative Data types}
+        \verb|char, byte, short, int, long, float, double|. These are the primative data types in Java. All of them also have a Class represetnation
+        which complements their functionality. For example: int\textrightarrow Int.
+
+        For calculations requiring floating points it is better that we use Double which is much efficent in Java regardless of the fact that it has double precision meaning it occupies double the size
+        of a float. Also, as you know the double and float are not accurate representing the real numbers. For this reason there is a class \dots
+
+        Also, the primitive data types are passed by value. Everything else in Java, is passed by reference.
+        
+    \section{String}
+        The \verb|string| type is a class in Java. And strings are immutable in Java, meaning each time we modify one we are actually creating a new one in memory.
+        This makes String manipulation inefficient in Java. For this reason we use String Buffers.
+        
+    \section{Expression vs Statement.}
+        Expression is part of the code that will result in a value.
 \end{document}
