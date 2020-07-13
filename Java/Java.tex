@@ -113,6 +113,7 @@ As a convention, the first letter in java classes should be a uppercase letter t
 
 Java Classes get saved in a .java format text file. Each class gets saved in a package folder which, we can see that package name in the first line of the class. It starts with the keyword package.
 
+\section{Access Modifiers}
 The public access modifier for class gives access to others to the class. Meaning, the other classes or developers can access the class based on this modifier. 
 The public means unrestricted access to the class.
 The access modifier in Java are as follows:
@@ -153,5 +154,12 @@ Java adds some basic functionality to each Class we create. An object of any cla
 Also, it is important that in Java declaring of a variable should be its initalization. RAII (Resource allocation is initalization).
 This means, if we write the code: Car porsche; This would create null referene. We have to assign an address to it explicitly. So, we fix the code to:  Car porsche = new Car();
 this assigns the reference the address in the heap. Actually, the compiler will not let us to compile a code with uninitialized refrence.
+
+The philosophy behind access modifers for the fields beside the decreasing the risk of unathorized errorsome access is that we can provide geters and setter methods that can 
+evaluate the field values and correct the errors. Using IntelliJIDEA we can easily create getters and setters from Code menu.
+
+\section{Constructor}
+Java just like C++ creates a default constructor.
+
 
 \end{document}
