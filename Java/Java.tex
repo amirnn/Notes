@@ -8,65 +8,104 @@
 \author{Amir Nourinia}
 
 \begin{document}
-    \maketitle
-    \tableofcontents
-    \section{Keywords}
-    The most important thing is that class and main keywords are both lowercase! :D
+\maketitle
+\tableofcontents
+\chapter{Introduction}
+\section{Keywords}
+The most important thing is that class and main keywords are both lowercase! :D
 
-    Moving on, all the keywords are lowercase. For a list you can search online. The wikipeida and w3schools or oracale have a list you can use as a reference.
-    \section{Difference and Similarties Between Java and C++}
-        First of all Java is completely OOP. Meaning even the main function gets wrapped inside a Class.
-        We mark the access modifer of the wrapper function for the main with public (lowercase). And also, we mark
-        the main function with:
-        
-        \begin{lstlisting}
+Moving on, all the keywords are lowercase. For a list you can search online. The wikipeida and w3schools or oracale have a list you can use as a reference.
+\section{Difference and Similarties Between Java and C++}
+First of all Java is completely OOP. Meaning even the main function gets wrapped inside a Class.
+We mark the access modifer of the wrapper function for the main with public (lowercase). And also, we mark
+the main function with:
+
+\begin{lstlisting}
         static public void main(String[] args){
             // DoSomething
          }
         \end{lstlisting}
 
-        Note that we use barackets for Array declartaion, however, we use them after the type. In previous example the array declaration is done 
-        with \verb|String[]|.
+Note that we use barackets for Array declartaion, however, we use them after the type. In previous example the array declaration is done
+with \verb|String[]|.
 
-        Java also uses semicolon \verb|;| to declare the end of an statement.
+Java also uses semicolon \verb|;| to declare the end of an statement.
 
-    \section{Primative Data types}
-        \verb|char, byte, short, int, long, float, double|. These are the primative data types in Java. All of them also have a Class represetnation
-        which complements their functionality. For example: int\textrightarrow Int.
+\section{Primative Data types}
+\verb|char, byte, short, int, long, float, double|. These are the primative data types in Java. All of them also have a Class represetnation
+which complements their functionality. For example: int\textrightarrow Int.
 
-        For calculations requiring floating points it is better that we use Double which is much efficent in Java regardless of the fact that it has double precision meaning it occupies double the size
-        of a float. Also, as you know the double and float are not accurate representing the real numbers. For this reason there is a class \dots
+We can add suffixes to force the data type and be explicit about it. float - f, double - d, long - L.
+For calculations requiring floating points it is better that we use Double which is much efficent in Java regardless of the fact that it has double precision meaning it occupies double the size
+of a float. Also, as you know the double and float are not accurate representing the real numbers. For this reason there is a class \dots
 
-        Also, the primitive data types are passed by value. Everything else in Java, is passed by reference.
-        
-    \section{String}
-        The \verb|string| type is a class in Java. And strings are immutable in Java, meaning each time we modify one we are actually creating a new one in memory.
-        This makes String manipulation inefficient in Java. For this reason we use String Buffers.
-        
-    \section{Expression vs Statement.}
-        Expression is part of the code that will result in a value.
-        Statement is a command line ending with \verb|;|. This is same as the C++.
+Also, the primitive data types are passed by value. Everything else in Java, is passed by reference.
 
-    \section{Methods}
-        Just Like C++ we can not declare or define another method inside another method. In java however, we can use a method before we define or declare it. But, it has to be defined some where in the code.
+To convert String to int, long etc., we use the Class type of data and .parseType(String arg) method.
+\section{String}
+Notice the capital S. The \verb|String| type is a class in Java. And strings are immutable in Java, meaning each time we modify one we are actually creating a new one in memory.
+This makes String manipulation inefficient in Java. For this reason we use String Buffers.
 
-        In method overloading, unline C++, in Java chaging the return type does not change the method signature. For this reason, the only way to change method signature is using the input types and numbers.
-    
-    \section{Control flow}
-        switch(switchValue) in swich in the cases we use a break; to make sure that omly one case is gets executed.
-        \begin{lstlisting}
+\section{Expression vs Statement.}
+Expression is part of the code that will result in a value.
+Statement is a command line ending with \verb|;|. This is same as the C++.
+
+\section{Methods}
+Just Like C++ we can not declare or define another method inside another method. In java however, we can use a method before we define or declare it. But, it has to be defined some where in the code.
+
+In method overloading, unline C++, in Java chaging the return type does not change the method signature. For this reason, the only way to change method signature is using the input types and numbers.
+
+\section{Control flow}
+switch(switchValue) in swich in the cases we use a break; to make sure that omly one case is gets executed.
+\begin{lstlisting}
             switch(switchValue){
                 case 1:
                  //DoSomething
                  break;
                 case 2:
-                //
+                // case2
                 break;
-                
+
+                case 3:case 4:case 5:
+                //multiple cases
+                break;
+
                 default:
-                //
-                break;
+                // default case
+                break; /* This break is not necessary, 
+                        it is the last one. */
             }
             \end{lstlisting}
+
+So use break; to make sure the code works properly. Otherwise it can continue to other cases after the intended case.
+
+\section{Print out and read user input}
+Note the that the \verb|new| here returns an address to the memory. Unlike C++, we don't explicitly assign this value to a pointer type.
+However, the variable scanner, will be a refrence (implicit pointer) type and will be pointing to a part of heap memory.
+\begin{lstlisting}
+            // print to stdout.
+            System.out.printl(String arg);
+            // allows getting input from user.
+            Scanner scanner = new Scanner(System.in);
+            // To read a line
+            String name = scanner.nextLine();
+
+            /* To read an int, after this call we 
+            always call nextLine() to handle 
+            entered breakline character, which 
+            we enter as the user. */
+            int age = scanner.nextInt();
+            scanner.nextLine();
+            
+
+            /* Check if the next input in buffer is a 
+            valid Int without discarding it. */
+            scanner.hasNextInt();
+            //when done with scanner\dots
+            scanner.close();
+            \end{lstlisting}
+
+\chapter{OOP}
+State in an object is stored in fields. Fields are the counter parts of memeber variables in C++.
 
 \end{document}
