@@ -9,11 +9,38 @@
 \maketitle
 \tableofcontents
 \section{Preface}
+The Notes are based on deeplizard video seris on PyTorch.
 \chapter{Introduction}
 
 PyTorch is a thin layer library. Tensor library is really close to ndim numpy arrays. It is really easy to move calculation to gpu with PyTorch.
 PyTorch is based on Torch wich is written in Lua language. Soumith is the person behind PyTorch library. one of the advantages of PyTorch is that is debugable.
-
 PyTorch is created and maintained in Facebook, since Soumith is working there.
+
+\section{PyTorch Packages}
+PyTorch contains few packages namely:
+
+\begin{itemize}
+    \item torch: The top-level PyTorch package and tensor library
+    \item torch.nn: A subpackage that contains modules and extensible classes for building neural networks.
+    \item torch.autograd: A subpackage that supports all the differentiable Tensor operations in PyTorch.
+    \item torch.nn.functional: A functional interface that contains typical operations used for building neural networks, like loss functions, activation functions and
+    convolution operations.
+    \item torch.optim: A subpackage that contains standard optimization operations like SGD and Adam.
+    \item torch.utils: A subpackage that contains utility classes like data sets and data loaders that make data preprocessing easier.
+    \item torchvision: A package that provides access to popular datasets, model architectures, and image trasnformations for computer vision.
+\end{itemize}
+
+\section{Philosophy of PyTorch}
+
+\begin{itemize}
+    \item Stay out of the way
+    \item Cater to the impatient
+    \item Promote linear code-flow
+    \item Full interop with the Python ecosystem
+    \item Be as fast as anything else
+\end{itemize}
+
+Because of these philosophy we can use our own favorite debugger. In tensorflow for example we can not debug the python, since it runs in a C++ enviornment on the back.
+
 
 \end{document}
