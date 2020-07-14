@@ -1,6 +1,6 @@
 \documentclass[11pt,twoside,a4paper]{report}
 
-
+\usepackage{listings}
 \title{PyTorch Notes}
 
 \author{Amir Nourinia}
@@ -53,5 +53,68 @@ But at the time of the writing of this document, the command is:
 python3 -m pip install --user -U torch torchvision
 
 I prefer to install it the local directory in my home folder for ease of package managementa and avoiding conflicts with system python packages. 
+
+\section{Future}
+The future of software development is machines writing software. Machines are fast and they are inexhaustible. As long as there is data, architecture and creativity the machines can write the sofware.
+
+\section{CUDA}
+GPUs bring parrallel programming into the picture. DNN are embarrassingly Prallel algorithms this means the GPU which has thousands of cores can be massivly beneficial.
+
+If a computation can be done in parallel we can excel at it using GPUs.
+
+With PyTorch the CUDA comes ready to use. All we need is to have CUDA supporting GPU.
+
+Much of PyTorch is written in python but it drops to lower level languages C and C++ at the bottlenecks.
+
+
+t = torch.tensor([1,2,3])
+t \# prints t
+tCuda = t.cuda() \# t moves to gpu
+t \# prints t and shows the device='cuda'
+
+
+
+GPU is faster only for particular tasks. Moving data from CPU to GPU is costly, so this does not give us any performance boost for small calculations.
+GPU is good for parrallel taks. So for serial tasks this does not make sense.
+
+Deep Learning along with many other scientific computing task are leading into a new programming model called GPGPU Computing which stands for General Purpose
+GPU Computing. There is a paper with this name by Bogdan Oancea, Tudorel Andrei, Raluca Mariana Dragoescu.
+
+Nvidia has envisioned this era 10 years ago, that is why they created CUDA 10 years ago, eventhough it is only recently taking off. 
+
+
+Apps, Frameworks
+PyTorch
+
+---
+
+Libraries such as CUDA, cuDNN
+
+---
+
+GPU
+
+\chapter{Tensors}
+We use tensor for any dimension of the data. So tensor is generalization of the data.
+
+\section{Rank}
+Number of dimensions present within the tenosr. How many indicies do we need. Differnt from mathematical rank definition.
+
+\begin{lstlisting}
+dd = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+t = torch.tensor(dd)
+t
+type(t)
+
+t.shape # will result in torch.Size([3,3])
+
+rank = len (x.shape)
+
+t.reshape(1,9)
+\end{lstlisting}
 
 \end{document}
