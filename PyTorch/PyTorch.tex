@@ -41,6 +41,17 @@ PyTorch contains few packages namely:
 \end{itemize}
 
 Because of these philosophy we can use our own favorite debugger. In tensorflow for example we can not debug the python, since it runs in a C++ enviornment on the back.
+Because of this PyTorch is the to go framework for research. This is also because, PyTorch uses a dynamic computational graph. This means that the graph is generated on the fly as the operations are created. This is in contrast to static graphs that are fully determined before the actual operations occur.
+It just so happens that many of the cutting edge research topics in deep learning are requiring or benefiting greatly from dynamic graphs. 
 
+A very good read on DL: http://colah.github.io/
+
+\section{Getting PyTorch}
+Go to pytoch main website and choose the appropriate package you need to download.
+But at the time of the writing of this document, the command is: 
+
+python3 -m pip install --user -U torch torchvision
+
+I prefer to install it the local directory in my home folder for ease of package managementa and avoiding conflicts with system python packages. 
 
 \end{document}
