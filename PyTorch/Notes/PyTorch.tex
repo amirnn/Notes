@@ -115,6 +115,36 @@ t.shape # will result in torch.Size([3,3])
 rank = len (x.shape)
 
 t.reshape(1,9)
+
+print(t.dtype)
+print(t.device)
+#for us the stride layout in memory is acceptable
+print(t.layout)
+
+#specify a device. index 0 stands 
+#for the first gpu that we have.
+device = torch.device('cuda:0')
+device # device(type="cuda",index=0)
 \end{lstlisting}
 
+For CNN [B,C,H,W]. B stands for Batch number. C stands for Color. 
+H and W stand for Height and Width.
+
+3 convolutional filters - 3 output channels or feature maps.
+
+tensor.dtype can have different types. And each type has CPU and GPU version. When calculating with tensors all of 
+them should have the same type or device type.
+
+Layout is the way the data is located in memory. Look for stride of an array on wikipedia.
+
+As neural network programmers, we need to be aware of the following:
+
+\begin{enumerate}
+    \item Tensors contain data of a uniform type (dtype).
+    \item Tensor computations between tensors depend on the dtype and the device.
+\end{enumerate}
+
+calling .cuda() on tensor returns a deep copy of the tensor but does not move it to the GPU.
+
+In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class[1] from some method call, which is assumed to be "new".[a] More broadly, a subroutine that returns a "new" object may be referred to as a "factory", as in factory method or factory function. This is a basic concept in OOP, and forms the basis for a number of related software design patterns.
 \end{document}
