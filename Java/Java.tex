@@ -114,7 +114,7 @@ As a convention, the first letter in java classes should be a uppercase letter t
 Java Classes get saved in a .java format text file. Each class gets saved in a package folder which, we can see that package name in the first line of the class. It starts with the keyword package.
 
 \section{Access Modifiers}
-The public access modifier for class gives access to others to the class. Meaning, the other classes or developers can access the class based on this modifier. 
+The public access modifier for class gives access to others to the class. Meaning, the other classes or developers can access the class based on this modifier.
 The public means unrestricted access to the class.
 The access modifier in Java are as follows:
 \begin{itemize}
@@ -155,11 +155,48 @@ Also, it is important that in Java declaring of a variable should be its initali
 This means, if we write the code: Car porsche; This would create null referene. We have to assign an address to it explicitly. So, we fix the code to:  Car porsche = new Car();
 this assigns the reference the address in the heap. Actually, the compiler will not let us to compile a code with uninitialized refrence.
 
-The philosophy behind access modifers for the fields beside the decreasing the risk of unathorized errorsome access is that we can provide geters and setter methods that can 
+The philosophy behind access modifers for the fields beside the decreasing the risk of unathorized errorsome access is that we can provide geters and setter methods that can
 evaluate the field values and correct the errors. Using IntelliJIDEA we can easily create getters and setters from Code menu.
 
 \section{Constructor}
-Java just like C++ creates a default constructor.
+Java just like C++ creates a default constructor. For a class named Account one can easily modify the default constructor in following way. Notice the public keyword and also that there is not return type (like C++).
+Consturctors also, can be overloaded like normal methods by assigning different number of inputs to them.
+
+To access fields in constructor we use \verb|this| keyword.
+We can call the constructors also by using the this(args\dots). Respective to the args types this call, calls the appropriate constructor.
+However, if one wants to use this call they have to use it as the first statement call in the constructor.
+
+It is better to set the values directly in the constructor rather than calling the setters. 
+This is due the fact that in inherticane sometimes if we are not careful the correct setter does not get called.
+Also, because we are in the constructor since we are initialazing and creating an object, some initalization process
+might not have been finished. So, while you are in the constructor we should not be calling other methods or even the setters within the constructor code.
+So, it is better to save the field values directly rather than calling setters or any other method.
+
+Code > Generate > constructor will generate constructor type we want. As a good practice, we usually create one constructor that sets all the fieldsand 
+all the other constructors call that constructor to set the fields. This improves readability and robustness.
+
+\begin{lstlisting}
+    public class Account{
+        private String name;
+        private int id;
+        public Account(){
+            /* this call to \textbf{this}
+               should be the first statement in 
+               the constructor. This setter call
+               is provided by Java and we can use
+               it.
+            */
+            this("unknown", -1);
+            System.out.println(
+                "Empty constructor Called.");
+        }
+        public Account(String name){
+            this.name = name;
+        }
+    }
+\end{lstlisting}
+
+\section{Inheritance}
 
 
 \end{document}
