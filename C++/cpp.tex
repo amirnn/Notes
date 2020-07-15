@@ -1,0 +1,47 @@
+\documentclass[11pt,twoside,a4paper]{report}
+\usepackage{listings}
+\author{Amir Nourinia}
+
+\title{C++ Notes}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+\chapter{Primitive Types}
+
+\section{string}
+C++ introduces its own class for C++. It can be included using \#include <string>.
+Note that string starts with small letter.
+"a" is type of char* which is a pointer to character type also known as c style string.
+however 'a' is char type which is a character. This is important and also different from Java.
+
+
+
+
+\chapter{Classes}
+\section{const keyword on member functions (methods) and constructor functions (methods)}
+A constructor can not be marked as const using const type qualifier. Which makes sense since we are going to modeify or initilize the memory where the class is being held in.
+Also, after using a const type qualifier on a memeber function (which is by nature not constructors) we have to use the same const in their definition since the const becomes part of the
+identifier.
+
+\begin{lstlisting}
+    public:
+     void print() const;
+
+    \\later in definition
+    void String::print() const {
+         \\do something
+         }
+\end{lstlisting}
+
+\chapter{Streams}
+std::cin and std::cout are objects of type std::istream which can be passed around. However, the istream move and copy constructor are deleted so we can only send them by reference.
+
+\begin{lstlisting}
+    void readFromStream(std::istream&);
+    // later in usage:
+    readFromStream(std::cin);
+\end{lstlisting}
+
+
+\end{document}
