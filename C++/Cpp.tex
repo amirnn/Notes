@@ -1,0 +1,101 @@
+\documentclass[11pt,twoside,a4paper]{report}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\author{Amir Nourinia}
+
+\title{C++ Notes}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Primitive Types}
+
+\section{string}
+C++ introduces its own class for C++. It can be included using \#include <string>.
+Note that string starts with small letter.
+"a" is type of char* which is a pointer to character type also known as c style string.
+however 'a' is char type which is a character. This is important and also different from Java.
+
+
+\section{functions}
+In functions note that the default value for the arguments should be defined in functione declaration. This is specially important in classes when you can easily make the mistake of defining default values in fucntion definition as well.
+There can be as many declarations for function but there should be only one definition (implmentation).
+
+Best practice for returning a value by reference. Taken from \href{https://stackoverflow.com/questions/4986673/c11-rvalues-and-move-semantics-confusion-return-statement}{Here}.
+i.e. just as you would in C++03. tmp is implicitly treated as an rvalue in the return statement. It will either be returned via return-value-optimization (no copy, no move), or if the compiler decides it can not perform RVO, then it will use vector's move constructor to do the return. Only if RVO is not performed, and if the returned type did not have a move constructor would the copy constructor be used for the return.
+\begin{lstlisting}
+
+
+std::vector<int> return_vector(void)
+{
+    std::vector<int> tmp {1,2,3,4,5};
+    return tmp;
+}
+
+std::vector<int> rval_ref = return_vector();
+
+\end{lstlisting}
+
+\chapter{Classes}
+\section{Initialization}
+Initialization of class memeber variables is important since, if we don't initialize them they are left with a random meaning less number. For this reason either give the values a initial (default) value in the declaration in class body
+or initialize them inside a Member initializer list which is the place where non-default initialization of these objects can be specified.
+\begin{lstlisting}
+    Class_Name(): memeber{val},..{}
+\end{lstlisting}
+
+
+\section{Constructors}
+Taken from: \href{https://en.cppreference.com/w/cpp/language/constructor}{Here} \\
+Constructors have no names and cannot be called directly. They are invoked when initialization takes place, and they are selected according to 
+the rules of initialization. The constructors without explicit specifier are converting constructors. The constructors with a constexpr specifier 
+make their type a LiteralType. Constructors that may be called without any argument are default constructors. Constructors that take another object of the same type as the argument are copy constructors and move constructors. 
+
+For default contructor it does not matter if we call the it or not since, C++ will understand this by itself.
+String myString; is equal to String myString();
+
+\section{Converting constructor}
+Taken from: \href{https://en.cppreference.com/w/cpp/language/converting_constructor}{Here} \\
+A constructor that is not declared with the specifier explicit and which can be called with a single parameter \(until C++11\) is called a converting constructor.
+Unlike explicit constructors, which are only considered during direct initialization \(which includes explicit conversions such as static_cast\), converting constructors are also considered during copy initialization, as part of user-defined conversion sequence. 
+
+\section{const keyword on member functions (methods) and constructor functions (methods)}
+A constructor can not be marked as const using const type qualifier. Which makes sense since we are going to modeify or initilize the memory where the class is being held in.
+Also, after using a const type qualifier on a memeber function (which is by nature not constructors) we have to use the same const in their definition since the const becomes part of the
+identifier.
+
+\begin{lstlisting}
+    public:
+     void print() const;
+
+     //note the default value in function declaration.
+     void split(std::string delmiter = " ")
+
+     //later in definition
+     void String::print() const {
+         \\do something
+         }
+\end{lstlisting}
+
+\section{Class scope identifier}
+On the last code example notice the function signature "void String::print() const".\\
+And note that return type comes before the scope indentifier "String::" This makes sense since we are looking for the symbol or the namer prin in String scope,
+so, the print keyword exists only in String::print form.
+
+\chapter{Streams}
+std::cin and std::cout are objects of type std::istream which can be passed around. However, the istream move and copy constructor are deleted so we can only send them by reference.
+
+\begin{lstlisting}
+    void readFromStream(std::istream&);
+    // later in usage:
+    readFromStream(std::cin);
+\end{lstlisting}
+
+
+\end{document}
