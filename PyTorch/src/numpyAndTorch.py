@@ -22,4 +22,15 @@ t4 = t3.cuda()
 print("t3 device: {}".format(t3.device))
 
 
+# Again.
+# These two copy the data.
+t1 = torch.Tensor(data)
+t2 = torch.tensor(data) #This is our to go function.
+# Changes made to data will present itself on t3 and t4
+# This is because t3 and t4 are references or mirrors.
+# This data sharing makes these methods more efficient.
+t3 = torch.as_tensor(data)  #accepts everything.
+t4 = torch.from_numpy(data) #only accepts numpy arrays
+
+
 
