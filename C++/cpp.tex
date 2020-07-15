@@ -5,8 +5,8 @@
 \title{C++ Notes}
 
 \begin{document}
-    \maketitle
-    \tableofcontents
+\maketitle
+\tableofcontents
 \chapter{Primitive Types}
 
 \section{string}
@@ -16,7 +16,8 @@ Note that string starts with small letter.
 however 'a' is char type which is a character. This is important and also different from Java.
 
 
-
+\section{functions}
+In functions note that the default value for the arguments should be defined in functione declaration. This is specially important in classes when you can easily make the mistake of defining default values in fucntion definition as well.
 
 \chapter{Classes}
 \section{const keyword on member functions (methods) and constructor functions (methods)}
@@ -28,11 +29,19 @@ identifier.
     public:
      void print() const;
 
-    \\later in definition
-    void String::print() const {
+     //note the default value in function declaration.
+     void split(std::string delmiter = " ")
+
+     //later in definition
+     void String::print() const {
          \\do something
          }
 \end{lstlisting}
+
+\section{Class scope identifier}
+On the last code example notice the function signature "void String::print() const".\\
+And note that return type comes before the scope indentifier "String::" This makes sense since we are looking for the symbol or the namer prin in String scope,
+so, the print keyword exists only in String::print form.
 
 \chapter{Streams}
 std::cin and std::cout are objects of type std::istream which can be passed around. However, the istream move and copy constructor are deleted so we can only send them by reference.
