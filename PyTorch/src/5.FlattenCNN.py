@@ -45,3 +45,27 @@ print("first row of pixels in first color channel in the first image in the batc
 
 # first pixel in above
 print("first pixel in above:\n",t[0][0][0][0])
+
+# To Flatten these all work
+# t.reshape(1,-1)[0]
+# t.reshape(-1)
+# t.view(t.numel())
+# t.view(-1)
+# But we use this from PyTorch
+t.flatten()
+
+# We want to flatten each image holding batches seperate from eachother.
+# We provide the start_dim argument to start flattening from that axis.
+# As you can see flatten does not manipulate the original data on memory.
+tFlattened = t.flatten(start_dim=1)
+print("original t shape after flatten ",t.shape)
+print("shape of returned tensor from flatten(start_dim=1): ", tFlattened.shape)
+
+# Also, we could have done the following.
+# we can specify the reshape size as: t.reshape(shape=(3,-1))
+# Note that in python a 5,6 is as (5,6) or a tuple.
+# so reshape(3,-1) is same as reshape((3,-1))
+tFlattened = t.reshape(3,-1)
+tFlattened2 = t.reshape((3,-1))
+print("tFlattened using reshape: ", tFlattened.shape)
+print("tFlattened2 using reshape and tuple: ", tFlattened2.shape)
