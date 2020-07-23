@@ -62,6 +62,14 @@ make their type a LiteralType. Constructors that may be called without any argum
 For default contructor it does not matter if we call the it or not since, C++ will understand this by itself.
 String myString; is equal to String myString();
 
+\subsection{Defualt Constructor}
+If no user-declared constructors of any kind are provided for a class type (struct, class, or union), the compiler will always declare a default constructor as an inline public member of its class.
+If some user-declared constructors are present, the user may still force the automatic generation of a default constructor by the compiler that would be implicitly-declared otherwise with the keyword default. (since C++11)
+The implicitly-declared (or defaulted on its first declaration) default constructor has an exception specification as described in dynamic exception specification (until C++17)exception specification (since C++17)
+See \href{https://en.cppreference.com/w/cpp/language/default_constructor}{Here.}
+This means if we declare our own custome constructor of anykind the defualt constructor will be omitted by the compiler. But again, we can force its generation by the compiler or, we can declare it ourselves.
+
+
 \subsection{Converting constructor}
 Taken from: \href{https://en.cppreference.com/w/cpp/language/converting_constructor}{Here} \\
 A constructor that is not declared with the specifier explicit and which can be called with a single parameter \(until C++11\) is called a converting constructor.
