@@ -76,13 +76,6 @@ For example, following program results in undefined behavior. \href{https://www.
 A virtual function is a member function which is declared within a base class and is re-defined(Overriden)
 by a derived class. When you refer to a derived class object using a pointer or a reference to the base class,
 you can call a virtual function for that object and execute the derived class’s version of the function.
-See \href{https://www.geeksforgeeks.org/virtual-function-cpp/}{Here}
-
-\subsection{Pure Virtual Functions}
-Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class. For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape, but we know every derived class must have implementation of draw(). Similarly an Animal class doesn’t have implementation of move() (assuming that all animals move), but all animals must know how to move. We cannot create objects of abstract classes.
-
-A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have implementation, we only declare it. A pure virtual function is declared by assigning 0 in declaration. See the following example.
-See \href{https://www.geeksforgeeks.org/pure-virtual-functions-and-abstract-classes/}{Here}
 
 \subsection{Can virtual functions be private in C++?}
 In C++, virtual functions can be private and can be overridden by the derived class. See \href{https://www.geeksforgeeks.org/can-virtual-functions-be-private-in-c/}{this}

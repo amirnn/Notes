@@ -3,8 +3,14 @@
 \BOOKMARK [1][-]{section.1.2}{functions}{chapter.1}% 3
 \BOOKMARK [0][-]{chapter.2}{Classes}{}% 4
 \BOOKMARK [1][-]{section.2.1}{Initialization}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.2}{Constructors}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.3}{Converting constructor}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.4}{const keyword on member functions \(methods\) and constructor functions \(methods\)}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.5}{Class scope identifier}{chapter.2}% 9
-\BOOKMARK [0][-]{chapter.3}{Streams}{}% 10
+\BOOKMARK [1][-]{section.2.2}{Inheritance}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Constructors}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.3.1}{Converting constructor}{section.2.3}% 8
+\BOOKMARK [1][-]{section.2.4}{Destructors}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.4.1}{Virtual Destructor}{section.2.4}% 10
+\BOOKMARK [1][-]{section.2.5}{Virtual Functions}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{Pure Virtual Functions}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Can virtual functions be private in C++?}{section.2.5}% 13
+\BOOKMARK [1][-]{section.2.6}{const keyword on member functions \(methods\) and constructor functions \(methods\)}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.7}{Class scope identifier}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Streams}{}% 16
