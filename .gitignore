@@ -8,3 +8,6 @@
 *.out
 data
 .vscode
+
+build
+.DS_Store
