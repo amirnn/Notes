@@ -14,6 +14,10 @@
 \begin{document}
 \maketitle
 \tableofcontents
+\chapter{rvalues - lvalues}
+See \href{http://thbecker.net/articles/rvalue_references/section_01.html}{Here.}
+See \href{https://stackoverflow.com/questions/34221287/how-are-rvalues-in-c-stored-in-memory}{Here.}
+lvalues have memory adress. rvalues don't have memory adress.
 \chapter{Primitive Types}
 
 \section{string}
@@ -208,5 +212,22 @@ std::cin and std::cout are objects of type std::istream which can be passed arou
     readFromStream(std::cin);
 \end{lstlisting}
 
+\chapter{Asynronous Programming}
+Since C++11 we have threading support.
+\section{thread}
+See \href{https://www.geeksforgeeks.org/multithreading-in-cpp/}{here.}
+See \href{https://www.bogotobogo.com/cplusplus/C11/1_C11_creating_thread.php}{here.}
+include <thread> adds threading capabilities to the code. A thread gets one callable, it can be:
+\begin{itemize}
+    \item A function pointer
+    \item A function object
+    \item A lambda expression
+\end{itemize}
 
+\section{Promise and Future}
+See \href{https://www.modernescpp.com/index.php/promise-and-future}{Here.}
+See \href{https://en.cppreference.com/w/cpp/thread/future}{Here.}
+See \href{https://stackoverflow.com/questions/7686939/c-simple-return-value-from-stdthread}{Here.}
+See \href{https://www.youtube.com/watch?v=XDZkyQVsbDY}{Here.}
+See \href{https://www.youtube.com/watch?v=o0pCft99K74&list=PL1835A90FC78FF8BE&index=4}{Here.}
 \end{document}
