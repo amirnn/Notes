@@ -51,8 +51,8 @@ print("first row of pixels in first color channel in the first image in the batc
 print("first pixel in above:\n",t[0][0][0][0])
 
 # To Flatten these all work
-# ub = t.reshape(1,-1) #This needs squeezing still. torch.Size([1, 48])
-# u = t.reshape(1,-1)[0] #? -> [0] is it correct? Yes. 
+ub = t.reshape(1,-1) #This needs squeezing still. torch.Size([1, 48])
+u = t.reshape(1,-1)[0] #? -> [0] is it correct? Yes. torch.Size([48])
 # t.reshape(-1)
 # t.view(t.numel())
 # t.view(-1)
@@ -75,3 +75,8 @@ tFlattened = t.reshape(3,-1)
 tFlattened2 = t.reshape((3,-1))
 print("tFlattened using reshape: ", tFlattened.shape)
 print("tFlattened2 using reshape and tuple: ", tFlattened2.shape)
+
+# Note That we still can squeeze a [1,n] i.e.
+# a matrix (2-dims) to a one dim one. -> [n]
+# using squeeze. Flatten does this. It vectorizes
+# the tensor and reduces its dim to 1.

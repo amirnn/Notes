@@ -17,4 +17,4 @@ import numpy as np
 # us MNIST. 
 
 # Fashion-MNIST data set has a paper.
-# has 10 classes. Is like a dirce drop in replacement of the MNIST.
+# has 10 classes. It is like a drag and drop replacement of the MNIST.

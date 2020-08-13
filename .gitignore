@@ -6,6 +6,7 @@
 *.pdf
 *.toc
 *.out
+
 data
 .vscode
 

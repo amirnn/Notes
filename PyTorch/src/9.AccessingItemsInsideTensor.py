@@ -1,9 +1,10 @@
-# !/usr/bin/python3
+# !/usr/local/bin/python3
 
 import torch
 import numpy as np
 
-t = torch.rand((5,5))
+# Generate uniform random numbers
+t = torch.rand((5, 5))
 
 # return the mean
 tMean = t.mean()
@@ -13,7 +14,7 @@ print(tMean)
 tMean = t.mean(dim=0)
 print(tMean)
 
-# Now a numpy array
+# Now, return it as a numpy array
 tNumpy = tMean.numpy()
 print(tNumpy, tNumpy.dtype, tMean.dtype)
 
